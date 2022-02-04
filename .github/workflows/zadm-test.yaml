@@ -1,0 +1,29 @@
+name: zadm tests
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  zadm-tests:
+    runs-on: macos-10.15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: zadm test-suite on OmniOS
+      uses: papertigers/illumos-vm@r38
+      with:
+        prepare: |
+          pkg install --no-backup-be gnu-tar jq ripgrep brand/bhyve brand/kvm brand/illumos brand/lx brand/pkgsrc brand/sparse
+        run: |
+          ./bootstrap
+          ./configure
+          gmake
+          export PATH="$PATH:/opt/ooce/bin"
+          ./test/run
+
