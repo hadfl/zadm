@@ -168,7 +168,7 @@ sub zoneNic($self) {
 
         # physical links are ok
         my $dladm = $self->utils->readProc('dladm', [ qw(show-phys -p -o link) ]);
-        return undef if grep { $_ eq $nic } @$dladm;
+        return undef if grep { $_ eq $name } @$dladm;
 
         $dladm = $self->utils->readProc('dladm', [ (qw(show-vnic -p -o), join (',', @VNICATTR)) ]);
 
