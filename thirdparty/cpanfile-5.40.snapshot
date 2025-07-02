@@ -218,18 +218,18 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       IO::Compress::Base 2.213
       IO::Uncompress::Base 2.213
-  IO-Socket-SSL-2.089
-    pathname: S/SU/SULLR/IO-Socket-SSL-2.089.tar.gz
+  IO-Socket-SSL-2.094
+    pathname: S/SU/SULLR/IO-Socket-SSL-2.094.tar.gz
     provides:
-      IO::Socket::SSL 2.089
+      IO::Socket::SSL 2.094
       IO::Socket::SSL::Intercept 2.056
-      IO::Socket::SSL::OCSP_Cache 2.089
-      IO::Socket::SSL::OCSP_Resolver 2.089
+      IO::Socket::SSL::OCSP_Cache 2.094
+      IO::Socket::SSL::OCSP_Resolver 2.094
       IO::Socket::SSL::PublicSuffix undef
-      IO::Socket::SSL::SSL_Context 2.089
-      IO::Socket::SSL::SSL_HANDLE 2.089
-      IO::Socket::SSL::Session_Cache 2.089
-      IO::Socket::SSL::Trace 2.089
+      IO::Socket::SSL::SSL_Context 2.094
+      IO::Socket::SSL::SSL_HANDLE 2.094
+      IO::Socket::SSL::Session_Cache 2.094
+      IO::Socket::SSL::Trace 2.094
       IO::Socket::SSL::Utils 2.015
     requirements:
       ExtUtils::MakeMaker 0
@@ -289,8 +289,8 @@ DISTRIBUTIONS
       Text::ParseWords 0
       perl 5.006001
       version 0.87
-  Mojolicious-9.39
-    pathname: S/SR/SRI/Mojolicious-9.39.tar.gz
+  Mojolicious-9.40
+    pathname: S/SR/SRI/Mojolicious-9.40.tar.gz
     provides:
       Mojo undef
       Mojo::Asset undef
@@ -359,7 +359,7 @@ DISTRIBUTIONS
       Mojo::UserAgent::Transactor undef
       Mojo::Util undef
       Mojo::WebSocket undef
-      Mojolicious 9.39
+      Mojolicious 9.40
       Mojolicious::Command undef
       Mojolicious::Command::Author::cpanify undef
       Mojolicious::Command::Author::generate undef
@@ -382,6 +382,7 @@ DISTRIBUTIONS
       Mojolicious::Lite undef
       Mojolicious::Plugin undef
       Mojolicious::Plugin::Config undef
+      Mojolicious::Plugin::Config::Sandbox undef
       Mojolicious::Plugin::DefaultHelpers undef
       Mojolicious::Plugin::EPLRenderer undef
       Mojolicious::Plugin::EPRenderer undef
@@ -453,15 +454,15 @@ DISTRIBUTIONS
       Regexp::IPv6 0.03
     requirements:
       ExtUtils::MakeMaker 0
-  TOML-Tiny-0.18
-    pathname: O/OA/OALDERS/TOML-Tiny-0.18.tar.gz
+  TOML-Tiny-0.20
+    pathname: O/OA/OALDERS/TOML-Tiny-0.20.tar.gz
     provides:
-      TOML::Tiny 0.18
-      TOML::Tiny::Grammar 0.18
-      TOML::Tiny::Parser 0.18
-      TOML::Tiny::Tokenizer 0.18
-      TOML::Tiny::Util 0.18
-      TOML::Tiny::Writer 0.18
+      TOML::Tiny 0.20
+      TOML::Tiny::Grammar 0.20
+      TOML::Tiny::Parser 0.20
+      TOML::Tiny::Tokenizer 0.20
+      TOML::Tiny::Util 0.20
+      TOML::Tiny::Writer 0.20
     requirements:
       Carp 0
       Data::Dumper 0
@@ -476,62 +477,63 @@ DISTRIBUTIONS
       Term::ReadKey 2.38
     requirements:
       ExtUtils::MakeMaker 6.58
-  URI-5.31
-    pathname: O/OA/OALDERS/URI-5.31.tar.gz
+  URI-5.32
+    pathname: O/OA/OALDERS/URI-5.32.tar.gz
     provides:
-      URI 5.31
-      URI::Escape 5.31
-      URI::Heuristic 5.31
-      URI::IRI 5.31
-      URI::QueryParam 5.31
-      URI::Split 5.31
-      URI::URL 5.31
-      URI::WithBase 5.31
-      URI::data 5.31
-      URI::file 5.31
-      URI::file::Base 5.31
-      URI::file::FAT 5.31
-      URI::file::Mac 5.31
-      URI::file::OS2 5.31
-      URI::file::QNX 5.31
-      URI::file::Unix 5.31
-      URI::file::Win32 5.31
-      URI::ftp 5.31
-      URI::ftpes 5.31
-      URI::ftps 5.31
-      URI::geo 5.31
-      URI::gopher 5.31
-      URI::http 5.31
-      URI::https 5.31
-      URI::icap 5.31
-      URI::icaps 5.31
-      URI::irc 5.31
-      URI::ircs 5.31
-      URI::ldap 5.31
-      URI::ldapi 5.31
-      URI::ldaps 5.31
-      URI::mailto 5.31
-      URI::mms 5.31
-      URI::news 5.31
-      URI::nntp 5.31
-      URI::nntps 5.31
-      URI::otpauth 5.31
-      URI::pop 5.31
-      URI::rlogin 5.31
-      URI::rsync 5.31
-      URI::rtsp 5.31
-      URI::rtspu 5.31
-      URI::scp 5.31
-      URI::sftp 5.31
-      URI::sip 5.31
-      URI::sips 5.31
-      URI::snews 5.31
-      URI::ssh 5.31
-      URI::telnet 5.31
-      URI::tn3270 5.31
-      URI::urn 5.31
-      URI::urn::isbn 5.31
-      URI::urn::oid 5.31
+      URI 5.32
+      URI::Escape 5.32
+      URI::Heuristic 5.32
+      URI::IRI 5.32
+      URI::QueryParam 5.32
+      URI::Split 5.32
+      URI::URL 5.32
+      URI::WithBase 5.32
+      URI::data 5.32
+      URI::file 5.32
+      URI::file::Base 5.32
+      URI::file::FAT 5.32
+      URI::file::Mac 5.32
+      URI::file::OS2 5.32
+      URI::file::QNX 5.32
+      URI::file::Unix 5.32
+      URI::file::Win32 5.32
+      URI::ftp 5.32
+      URI::ftpes 5.32
+      URI::ftps 5.32
+      URI::geo 5.32
+      URI::gopher 5.32
+      URI::http 5.32
+      URI::https 5.32
+      URI::icap 5.32
+      URI::icaps 5.32
+      URI::irc 5.32
+      URI::ircs 5.32
+      URI::ldap 5.32
+      URI::ldapi 5.32
+      URI::ldaps 5.32
+      URI::mailto 5.32
+      URI::mms 5.32
+      URI::news 5.32
+      URI::nntp 5.32
+      URI::nntps 5.32
+      URI::otpauth 5.32
+      URI::pop 5.32
+      URI::rlogin 5.32
+      URI::rsync 5.32
+      URI::rtsp 5.32
+      URI::rtspu 5.32
+      URI::scp 5.32
+      URI::sftp 5.32
+      URI::sip 5.32
+      URI::sips 5.32
+      URI::smb 5.32
+      URI::snews 5.32
+      URI::ssh 5.32
+      URI::telnet 5.32
+      URI::tn3270 5.32
+      URI::urn 5.32
+      URI::urn::isbn 5.32
+      URI::urn::oid 5.32
     requirements:
       Carp 0
       Cwd 0
@@ -551,11 +553,11 @@ DISTRIBUTIONS
       strict 0
       utf8 0
       warnings 0
-  YAML-LibYAML-0.90
-    pathname: T/TI/TINITA/YAML-LibYAML-0.90.tar.gz
+  YAML-LibYAML-v0.904.0
+    pathname: T/TI/TINITA/YAML-LibYAML-v0.904.0.tar.gz
     provides:
-      YAML::LibYAML 0.90
-      YAML::XS 0.90
+      YAML::LibYAML v0.904.0
+      YAML::XS v0.904.0
     requirements:
       B::Deparse 0
       Exporter 0
