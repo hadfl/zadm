@@ -203,7 +203,7 @@ sub seedZvol($self, $file, $ds) {
         if ($bytes == 0) {
             my $type = $self->utils->getFileType($buffer, '.' . $file->extname) // '';
 
-            $snap   = $type eq 'ZFS snapshot stream';
+            $snap   = $type =~ /^ZFS\s+snapshot/;
             my @cmd = $snap ? ($self->utils->getCmd('zfs'), qw(recv -Fv), $ds)
                     :         ($self->utils->getCmd('dd'), "of=/dev/zvol/dsk/$ds", 'bs=1M');
 
