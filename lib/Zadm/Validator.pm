@@ -161,10 +161,10 @@ sub globalNic($self) {
 }
 
 sub zoneNic($self) {
-    return sub($name, $nic) {
+    return sub($nic, $net) {
         # if global-nic is set we just check if the vnic name is valid
-        return $name =~ /^\w+\d+$/ ? undef : 'not a valid vnic name'
-            if $nic->{'global-nic'};
+        return $nic =~ /^\w+\d+$/ ? undef : 'not a valid vnic name'
+            if $net->{'global-nic'};
 
         # physical links are ok
         my $dladm = $self->utils->readProc('dladm', [ qw(show-phys -p -o link) ]);
@@ -175,32 +175,32 @@ sub zoneNic($self) {
         for my $vnic (@$dladm) {
             my @vnicattr = split /:/, $vnic, scalar @VNICATTR;
             my %nicProps = map { $_ => $vnicattr[$self->vnicmap->{$_}] } @VNICATTR;
-            next if $nicProps{link} ne $name;
+            next if $nicProps{link} ne $nic;
 
-            $nic->{over} && $nic->{over} ne $nicProps{over}
-                && $self->log->warn("WARNING: vnic specified over '" . $nic->{over}
+            $net->{over} && $net->{over} ne $nicProps{over}
+                && $self->log->warn("WARNING: vnic specified over '" . $net->{over}
                     . "' but is over '" . $nicProps{over} . "'\n");
 
-            delete $nic->{over};
+            delete $net->{over};
             return undef;
         }
 
         # only reach here if vnic does not exist
         # get first global link if over is not given
 
-        $nic->{over} = $self->utils->getOverLink->[0] if !exists $nic->{over};
+        $net->{over} = $self->utils->getOverLink->[0] if !exists $net->{over};
 
         local $@;
         eval {
             local $SIG{__DIE__};
 
             privSet({ add => 1, inherit => 1 }, PRIV_SYS_DL_CONFIG);
-            $self->utils->exec('dladm', [ (qw(create-vnic -l), $nic->{over}, $name) ]);
+            $self->utils->exec('dladm', [ (qw(create-vnic -l), $net->{over}, $nic) ]);
             privSet({ remove => 1, inherit => 1 }, PRIV_SYS_DL_CONFIG);
         };
         return $@ if $@;
 
-        delete $nic->{over};
+        delete $net->{over};
         return undef;
     }
 }
